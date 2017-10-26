@@ -1,0 +1,46 @@
+.local-video {
+  height: 105px;
+  width: 140px;
+}
+
+.remote-video {
+  height: 450px;
+  width: 600px;
+}
+
+.floatingVideo {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  height: 105px;
+  width: 140px;
+  background-color: grey;
+  display: none;
+}
+
+.showContent {
+  display: block;
+}
+
+.hideContent {
+  display: none;
+}
+
+.loaderSpin {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    z-index: 1;
+    width: 130px;
+    height: 130px;
+    margin: -75px 0 0 -75px;
+    border: 10px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #DE6262; /* Blue */
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

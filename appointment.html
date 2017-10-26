@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright (c) 2017 Oracle. All rights reserved.
+  ~
+  ~ This material is the confidential property of Oracle Corporation or its
+  ~ licensors and may be used, reproduced, stored or transmitted only in
+  ~ accordance with a valid Oracle license or sublicense agreement.
+  -->
+
+<!--suppress HtmlUnknownTarget -->
+<html lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Chuck Hergenroeder" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+
+	<!-- Medical Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="demos/medical/medical.css" type="text/css" />
+	<!-- / -->
+
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="demos/medical/css/medical-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="demos/medical/fonts.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="css/colors.php?color=DE6262" type="text/css" />
+
+	<!-- Document Title
+	============================================= -->
+  <title>Medical Demo | Live Experience</title>
+  <meta charset="UTF-8">
+  <!--<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src * data:">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <!--<link rel="icon" href="images/favicon.ico" type="image/x-icon" />-->
+
+  <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+
+<body class="stretched" data-loader-html="<div id='css3-spinner-svg-pulse-wrapper'><svg id='css3-spinner-svg-pulse' version='1.2' height='210' width='550' xmlns='http://www.w3.org/2000/svg' viewport='0 0 60 60' xmlns:xlink='http://www.w3.org/1999/xlink'><path id='css3-spinner-pulse' stroke='#DE6262' fill='none' stroke-width='2' stroke-linejoin='round' d='M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210' /></svg></div>">
+  <!-- include these libraries -->
+  <script type="text/javascript" src="js/auth.js"></script>
+  <script type="text/javascript" src="js/cloud.js"></script>
+  <!-- include the sample LX integration -->
+  <script type="text/javascript" src="js/lx-integration.js"></script>
+
+  <!-- script tag executed when application loads - login to Live Experience -->
+  <script type="application/javascript" language="JavaScript">
+    // enable debug logging within JS SDK
+    cloud.setLogLevel(cloud.LOGLEVEL.DEBUG);
+    // login to Live Experience
+    lx.integration.loginToLiveExperience();
+  </script>
+
+  <!-- Document Wrapper
+  ============================================= -->
+  <div id="wrapper" class="clearfix">
+
+
+    <!-- Header
+    ============================================= -->
+    <header id="header">
+
+      <div id="header-wrap">
+
+        <div class="container clearfix">
+
+          <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+          <!-- Logo
+          ============================================= -->
+          <div id="logo">
+            <a href="index.html" class="standard-logo"><img src="demos/medical/images/logo-medical.png" alt="Canvas Logo"></a>
+            <a href="index.html" class="retina-logo"><img src="demos/medical/images/logo-medical@2x.png" alt="Canvas Logo"></a>
+          </div><!-- #logo end -->
+
+          <!-- Primary Navigation
+          ============================================= -->
+          <nav id="primary-menu" class="style-3">
+
+            <ul>
+              <li><a href="index.html"><div>Home</div></a></li>
+              <li><a href="#"><div>About Us</div></a></li>
+              <li><a href="#"><div>Services</div></a></li>
+              <li><a href="#"><div>Doctors</div></a></li>
+              <li><a href="#"><div>Contact</div></a></li>
+            </ul>
+
+          </nav><!-- #primary-menu end -->
+
+        </div>
+
+      </div>
+
+    </header><!-- #header end -->
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+      <div class="content-wrap">
+
+        <div class="container clearfix">
+          <div class="heading-block center nobottomborder">
+            <!-- Initial Header -->
+            <div id="initialHeader">
+              <h3>Connect To Your Appointment<span>.</span></h3>
+              <span>Please read and agree to the following terms to begin your appointment.</span>
+            </div>
+            <!-- Begining Call Header -->
+            <div id="beginCallHeader" style="display: none">
+              <h3>Connecting to your Appointment<span>.</span></h3>
+              <div>This may take a few moments.</div>
+              <div class="loaderSpin"></div>
+              <!-- <div id='css3-spinner-svg-pulse-wrapper'><svg id='css3-spinner-svg-pulse' version='1.2' height='210' width='550' xmlns='http://www.w3.org/2000/svg' viewport='0 0 60 60' xmlns:xlink='http://www.w3.org/1999/xlink'><path id='css3-spinner-pulse' stroke='#DE6262' fill='none' stroke-width='2' stroke-linejoin='round' d='M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210' /></svg></div> -->
+            </div>
+            <!-- Active Call Header -->
+            <div id="inCallHeader" style="display: none">
+              <h3>Appointment In Progress<span>.</span></h3>
+            </div>
+            <!-- End Call Header -->
+            <div id="endCallHeader" style="display: none">
+              <h3>Thank you for contacting us. Your appointment has now ended<span>.</span></h3>
+              <button id="homeBtn" class="button" onclick="location.href = 'index.html';" title="Home">Return Home</button>
+            </div>
+            <!-- Error Codes -->
+            <div id="connectionError" style="display: none">Server side connection error.</div>
+            <div id="invalidUser" style="display: none">Invalid User.</div>
+            <div id="streamFailed" style="display: none">Call Unexpectedly Failed.</div>
+            <div id="remoteTerminated" style="display: none">Call End Initiated.</div>
+          </div>
+          <!-- Terms and Conditions -->
+          <div id="terms" class="col_full text-center" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4">
+            <textarea class="form-control" rows="5" id="comment" disabled>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+            <br>
+            <label class="checkbox-inline"><input id="legalCheck" type="checkbox" value="">I agree</label>
+          </div>
+          <div id="remoteStreamContent" class="col_two_third" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4"  style="display: none">
+            <!-- This is where you connect the remote audio to speaker -->
+            <audio id="remoteAudio" autoplay></audio>
+            <!-- This is where you connect the remote video (associate camera) -->
+            <div id="doctorVideo" class="col_full">
+              <!-- Instead of display: none; look at using Opacity: 0 -->
+              <div id="remoteLabel" style="display: none">Doctors Video:</div>
+              <video id="remoteVideo" class="remote-video" autoplay style="display: none;"></video>
+            </div>
+          </div>
+          <div id="localStreamContent" class="col_one_third col_last" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4"  style="display: none">
+            <!-- This is where you connect the local audio stream from microphone -->
+            <audio id="localAudio" autoplay></audio>
+            <!-- This is where you connect the local video (customer camera) -->
+            <div id="patientVideo" class="col_full">
+              <div id="localLabel" style="display: none">Your Video:</div>
+              <video id="localVideo" class="local-video" autoplay style="display: none"></video>
+            </div>
+            <!-- This is where we display the in-call call control buttons. -->
+            <!-- <button id="resetBtn" class="reset button hiddenBTN" onclick="lx.integration.logoutFromLiveExperience()" title="Reset" style="display: none">Reset</button> -->
+            <!-- This button ends the call with the associate -->
+            <button id="endCallBtn"class="end-call button button-3d hiddenBTN" onclick="lx.integration.endCallWithAssociate()" title="End Call" style="display: none">End Appointment</button>
+            <!-- This button holds the call with the associate -->
+            <button class="hold-call button button-3d hiddenBTN" onclick="lx.integration.holdCallWithAssociate()" title="Hold Call" style="display: none">Hold</button>
+            <!-- This button resumes the call with the associate -->
+            <button class="resume-call button button-3d" onclick="lx.integration.resumeCallWithAssociate()" title="Resume Call" style="display: none">Resume</button>
+          </div>
+          <!-- Engagement Buttons -->
+          <div id="engagement" class="col_full text-center" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4">
+            <!-- This button starts a call with the associate -->
+            <!-- <button id="startCallBtn" class="start-video-call button button-large showBTN" onclick="lx.integration.startTwoWayVideoCallWithAssociate()" title="Start Video Call">Start Appointment</button> -->
+            <button id="startCallBtn" class="start-video-call btn btn-success showBTN" disabled="disabled" onclick="lx.integration.startTwoWayVideoCallWithAssociate()" title="Start Video Call">Begin Appointment</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- #content end -->
+
+    <!-- Footer
+    ============================================= -->
+    <footer id="footer" style="background-color: #F5F5F5;border-top: 2px solid rgba(0,0,0,0.06);">
+
+    <div class="container" style="border-bottom: 1px solid rgba(0,0,0,0.06);">
+
+
+    </div>
+
+    </footer><!-- #footer end -->
+
+  </div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- Floating Video Overlay -->
+<!-- <div class="floatingVideo" id="videoOverlay"><video id="localVideo" class="local-video" autoplay style="display: none"></video></div>-->
+
+
+
+<!-- External JavaScripts
+============================================= -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+  // Initial disable of Start Call Button until terms are agreed //
+  $('#legalCheck').click(function(){
+
+  if($(this ).prop( "checked" )){
+      $('#startCallBtn').removeAttr('disabled');
+  }
+  else
+      $('#startCallBtn').attr("disabled","disabled");
+  });
+
+  // Start Call Button actions: show call buttons and hide start button
+  $('#startCallBtn').click(function(){
+    $('#initialHeader').addClass('hideContent');
+    $('#beginCallHeader').css('display' , 'inline-block');
+    $('#terms').addClass('hideContent');
+    $('#remoteStreamContent').css('display' , 'inline-block');
+    $('#localStreamContent').css('display' , 'inline-block');
+    $('.showBTN').css('display' , 'none');
+    //$('#videoOverlay').addClass('showContent');
+  });
+
+  $('#endCallBtn').click(function(){
+    //$('#endCallHeader').css('display' , 'inline-block');
+    //$('#inCallHeader').css('display' , 'none');
+    //$('#videoStreamContent').css('display' , 'none');
+    //$('.hiddenBTN').css('display' , 'none');
+    //$('#videoOverlay').addClass('hideContent');
+  });
+</script>
+<script type="text/javascript" src="js/plugins.js"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script type="text/javascript" src="js/functions.js"></script>
+
+</body>
+</html>
