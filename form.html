@@ -104,36 +104,38 @@
             <div class="col_one_fifth">
             </div>
 						<div class="col_four_fifth col_last">
-
-							<form class="nobottommargin" id="template-lxform" name="template-lxform" action="appointment.php" method="get">
+<!--  action="appointment.html" -->
+							<form class="nobottommargin" id="template-lxform" name="template-lxform" method="post">
 
 								 <div class="form-process"></div>
 
 								<div class="col_full">
 									<label for="template-lxform-name">Name <small>*</small></label>
-									<input type="text" id="lxform-name" name="name" value="" class="sm-form-control required" />
+									<input type="text" id="lxform-name" name="fullname" value="" class="sm-form-control required" />
 								</div>
 
 								<div class="clear"></div>
 
 								<div class="col_full">
 									<label for="template-lxform-email">Email <small>*</small></label>
-									<input type="email" id="lxform-email" name="username" value="" class="required email sm-form-control" />
+									<input type="text" id="lxform-email" name="email" value="" class="required email sm-form-control" />
 								</div>
 
 								<div class="clear"></div>
 
 								<div class="col_full">
-									<label for="template-lxform-tenant">Appointment ID<small>* (Tenant Name)</small></label>
-									<input type="text" id="lxform-tenant" name="tenant" value="" class="required sm-form-control" />
+									<label for="template-lxform-tenant">Appointment ID<small>*</small></label>
+									<input type="text" id="lxform-appointmentID" name="appointmentID" value="" class="required sm-form-control" />
 								</div>
 
-								 <div class="col_full hidden">
+								 <!-- <div class="col_full hidden">
 									<input type="text" id="template-lxform-botcheck" name="template-lxform-botcheck" value="" class="sm-form-control" />
-								</div>
+								</div> -->
 
 								<div class="col_full">
-									<button class="button button-3d nomargin" type="submit" id="submit" name="submit" value=" send">Next</button>
+									<!-- When the user "submits" data, call the debug function. Do not actually submit anything. -->
+									<button type="button" onclick="formsubmit()" class="button button-3d nomargin">Next</button>
+									<!-- <button class="button button-3d nomargin" type="submit" id="formsubmit" name="submit" value=" send" onclick="formsubmit();">Next</button> -->
 								</div>
 
 							</form>
@@ -228,10 +230,6 @@
 
 	</div><!-- #wrapper end -->
 
-	<!-- Go To Top
-	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
-
 	<!-- External JavaScripts
 	============================================= -->
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -240,6 +238,24 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script type="text/javascript" src="js/functions.js"></script>
+
+	<script type="text/javascript">
+	// This function stores form values into sessionStorage.
+	function formsubmit(){
+		var fullname = document.getElementById('lxform-name').value;
+		var email = document.getElementById('lxform-email').value;
+		var appointmentID = document.getElementById('lxform-appointmentID').value;
+
+		sessionStorage.setItem("fullname", fullname);
+		sessionStorage.setItem("email", email);
+		sessionStorage.setItem("appointmentID", appointmentID);
+
+		var url = "https://www.ignitedemos.com/medical/appointment.html";
+		window.open(url, '_top');
+
+		console.log(sessionStorage.getItem("fullname") + sessionStorage.getItem("email") + sessionStorage.getItem("appointmentID"));
+	}
+	</script>
 
 </body>
 </html>

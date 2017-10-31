@@ -1,0 +1,40 @@
+<!--
+  ~ Copyright (c) 2017 Oracle. All rights reserved.
+  ~
+  ~ This material is the confidential property of Oracle Corporation or its
+  ~ licensors and may be used, reproduced, stored or transmitted only in
+  ~ accordance with a valid Oracle license or sublicense agreement.
+  -->
+<div class="lx-web-component">
+  <div class="lx-buttons">
+    <!-- Note: button.onclick handlers are assigned in lx.js:addComponent -->
+
+    <!--<button class="lx-reset" title="Reset">Reset</button>-->
+    <!-- This button starts a call with the associate -->
+    <button class="lx-start-call" title="Start Call">Start Call</button>
+    <!-- This button ends the call with the associate -->
+    <button class="lx-end-call" title="End Call">End Call</button>
+    <!-- This button holds the call with the associate -->
+    <button class="lx-hold-call" title="Hold Call">Hold Call</button>
+    <!-- This button resumes the call with the associate, initially hidden -->
+    <button class="lx-resume-call" title="Resume Call" style="display: none">Resume Call</button>
+    <!-- NOT WORKING This button adds a video stream for the user, This is not adding the stream to the associate side.  -->
+    <!-- <button class="lx-add-video" title="Add User Video">Add Video</button> -->
+    <!-- NOT WORKING - This button downgrades the user from Video to Audio Only -->
+    <!-- <button class="lx-audio-only" title="Audio Only">Switch to Audio</button> -->
+  </div>
+  <div class="lx-audio">
+    <!-- This is where you connect the local audio stream from microphone -->
+    <audio class="lx-local-audio" autoplay></audio>
+    <!-- This is where you connect the remote audio to speaker -->
+    <audio class="lx-remote-audio" autoplay></audio>
+  </div>
+  <div class="lx-video">
+    <!-- This is where you connect the local video (customer camera) -->
+    <video class="lx-local-video" autoplay style="display: none;"></video>
+    <br/>
+    <!-- This is where you connect the remote video (associate camera) -->
+    <video class="lx-remote-video" autoplay style="display: none;"></video>
+    <br/>
+  </div>
+</div>

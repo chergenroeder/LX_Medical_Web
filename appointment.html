@@ -12,60 +12,40 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="Chuck Hergenroeder" />
+  <!-- Document Title
+  ============================================= -->
+  <title>Medical Demo | Live Experience</title>
+  <meta charset="UTF-8">
 
 	<!-- Stylesheets
 	============================================= -->
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
 	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
-
 	<!-- Medical Demo Specific Stylesheet -->
 	<link rel="stylesheet" href="demos/medical/medical.css" type="text/css" />
 	<!-- / -->
-
 	<link rel="stylesheet" href="css/dark.css" type="text/css" />
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="demos/medical/css/medical-icons.css" type="text/css" />
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
 	<link rel="stylesheet" href="demos/medical/fonts.css" type="text/css" />
-
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
 	<link rel="stylesheet" href="css/colors.php?color=DE6262" type="text/css" />
-
-	<!-- Document Title
-	============================================= -->
-  <title>Medical Demo | Live Experience</title>
-  <meta charset="UTF-8">
   <!--<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src * data:">-->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-  <!--<link rel="icon" href="images/favicon.ico" type="image/x-icon" />-->
-
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+
 </head>
-
 <body class="stretched" data-loader-html="<div id='css3-spinner-svg-pulse-wrapper'><svg id='css3-spinner-svg-pulse' version='1.2' height='210' width='550' xmlns='http://www.w3.org/2000/svg' viewport='0 0 60 60' xmlns:xlink='http://www.w3.org/1999/xlink'><path id='css3-spinner-pulse' stroke='#DE6262' fill='none' stroke-width='2' stroke-linejoin='round' d='M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210' /></svg></div>">
-  <!-- include these libraries -->
-  <script type="text/javascript" src="js/auth.js"></script>
-  <script type="text/javascript" src="js/cloud.js"></script>
-  <!-- include the sample LX integration -->
-  <script type="text/javascript" src="js/lx-integration.js"></script>
-
-  <!-- script tag executed when application loads - login to Live Experience -->
-  <script type="application/javascript" language="JavaScript">
-    // enable debug logging within JS SDK
-    cloud.setLogLevel(cloud.LOGLEVEL.DEBUG);
-    // login to Live Experience
-    lx.integration.loginToLiveExperience();
-  </script>
 
   <!-- Document Wrapper
   ============================================= -->
-  <div id="wrapper" class="clearfix">
-
+  <!-- <div id="wrapper" class="clearfix"> -->
 
     <!-- Header
     ============================================= -->
@@ -115,14 +95,35 @@
             <!-- Initial Header -->
             <div id="initialHeader">
               <h3>Connect To Your Appointment<span>.</span></h3>
-              <span>Please read and agree to the following terms to begin your appointment.</span>
+              <span>Appointment Details.</span>
+              <table class="table table-bordered">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Appointment ID</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Patient Name</th>
+                    <th>Patient Email</th>
+                    <td>Doctor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div id="output-apptID"></div></td>
+                    <td><div id="output-date"></div></td>
+                    <td><div id="output-time"></div></td>
+                    <td><span id="output-name"></span></td>
+                    <td><span id="output-email"></span></td>
+                    <td>Dr. Stevens</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <!-- Begining Call Header -->
             <div id="beginCallHeader" style="display: none">
               <h3>Connecting to your Appointment<span>.</span></h3>
               <div>This may take a few moments.</div>
               <div class="loaderSpin"></div>
-              <!-- <div id='css3-spinner-svg-pulse-wrapper'><svg id='css3-spinner-svg-pulse' version='1.2' height='210' width='550' xmlns='http://www.w3.org/2000/svg' viewport='0 0 60 60' xmlns:xlink='http://www.w3.org/1999/xlink'><path id='css3-spinner-pulse' stroke='#DE6262' fill='none' stroke-width='2' stroke-linejoin='round' d='M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210' /></svg></div> -->
             </div>
             <!-- Active Call Header -->
             <div id="inCallHeader" style="display: none">
@@ -141,49 +142,70 @@
           </div>
           <!-- Terms and Conditions -->
           <div id="terms" class="col_full text-center" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4">
+            <span>Please read and agree to the following terms to begin your appointment.</span>
             <textarea class="form-control" rows="5" id="comment" disabled>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
             <br>
             <label class="checkbox-inline"><input id="legalCheck" type="checkbox" value="">I agree</label>
           </div>
-          <div id="remoteStreamContent" class="col_two_third" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4"  style="display: none">
-            <!-- This is where you connect the remote audio to speaker -->
-            <audio id="remoteAudio" autoplay></audio>
-            <!-- This is where you connect the remote video (associate camera) -->
-            <div id="doctorVideo" class="col_full">
-              <!-- Instead of display: none; look at using Opacity: 0 -->
-              <div id="remoteLabel" style="display: none">Doctors Video:</div>
-              <video id="remoteVideo" class="remote-video" autoplay style="display: none;"></video>
+          <!-- Display LX Content -->
+          <div class="lx-video">
+            <!-- Remote Stream -->
+            <div id="remoteStreamContent" class="col_three_fourth" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4"  style="display: none">
+              <!--<div id="doctorVideo" class="col_full">-->
+                <div id="remoteLabel" style="display: none">Doctors Video:<br></div>
+                <!-- This is where you connect the remote video (associate camera) -->
+                <video class="lx-remote-video" autoplay style="display: none;"></video>
+              <!-- </div>-->
+            </div>
+            <!-- Local Stream -->
+            <div id="localStreamContent" class="col_one_fourth col_last" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4"  style="display: none">
+              <!-- <div id="patientVideo" class="col_full" style="align-items: center;">-->
+                <div id="localLabel" style="display: none">Your Video:<br></div>
+                <!-- This is where you connect the local video (customer camera) -->
+                <video class="lx-local-video" autoplay style="display: none;"></video>
+              <!-- </div>-->
+              <!-- In Call Buttons -->
+              <div class="lx-buttons text-center">
+                <!-- Note: button.onclick handlers are assigned in lx.js:addComponent -->
+                <!-- <button id="resetBtn" class="lx-reset button hiddenBTN" title="Reset" style="display: none">Reset</button><br> -->
+                <!-- This button holds the call with the associate -->
+                <button class="lx-hold-call button button-3d hiddenBTN" title="Hold Call" style="display: none">Hold Call</button>
+                <!-- This button resumes the call with the associate, initially hidden -->
+                <button class="lx-resume-call button button-3d" title="Resume Call" style="display: none">Resume Call</button>
+                <!-- This button ends the call with the associate -->
+                <button id="endCallBtn" class="lx-end-call button button-3d hiddenBTN" title="End Call" style="display: none">End Appointment</button><br>
+                <!-- NOT WORKING This button adds a video stream for the user, This is not adding the stream to the associate side.  -->
+                <!-- <button class="lx-add-video" title="Add User Video" style="display: none">Add Video</button><br> -->
+                <!-- NOT WORKING - This button downgrades the user from Video to Audio Only -->
+                <!-- <button class="lx-audio-only" title="Audio Only" style="display: none">Switch to Audio</button> -->
+              </div>
             </div>
           </div>
-          <div id="localStreamContent" class="col_one_third col_last" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4"  style="display: none">
-            <!-- This is where you connect the local audio stream from microphone -->
-            <audio id="localAudio" autoplay></audio>
-            <!-- This is where you connect the local video (customer camera) -->
-            <div id="patientVideo" class="col_full">
-              <div id="localLabel" style="display: none">Your Video:</div>
-              <video id="localVideo" class="local-video" autoplay style="display: none"></video>
-            </div>
-            <!-- This is where we display the in-call call control buttons. -->
-            <!-- <button id="resetBtn" class="reset button hiddenBTN" onclick="lx.integration.logoutFromLiveExperience()" title="Reset" style="display: none">Reset</button> -->
-            <!-- This button ends the call with the associate -->
-            <button id="endCallBtn"class="end-call button button-3d hiddenBTN" onclick="lx.integration.endCallWithAssociate()" title="End Call" style="display: none">End Appointment</button>
-            <!-- This button holds the call with the associate -->
-            <button class="hold-call button button-3d hiddenBTN" onclick="lx.integration.holdCallWithAssociate()" title="Hold Call" style="display: none">Hold</button>
-            <!-- This button resumes the call with the associate -->
-            <button class="resume-call button button-3d" onclick="lx.integration.resumeCallWithAssociate()" title="Resume Call" style="display: none">Resume</button>
-          </div>
-          <!-- Engagement Buttons -->
+          <!-- Start Call Button -->
           <div id="engagement" class="col_full text-center" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4">
             <!-- This button starts a call with the associate -->
-            <!-- <button id="startCallBtn" class="start-video-call button button-large showBTN" onclick="lx.integration.startTwoWayVideoCallWithAssociate()" title="Start Video Call">Start Appointment</button> -->
-            <button id="startCallBtn" class="start-video-call btn btn-success showBTN" disabled="disabled" onclick="lx.integration.startTwoWayVideoCallWithAssociate()" title="Start Video Call">Begin Appointment</button>
+            <button id="startCallBtn" class="lx-start-call btn btn-success showBTN" disabled="disabled" title="Start Video Call">Begin Appointment</button>
           </div>
+          <div class="lx-audio">
+            <!-- This is where you connect the local audio stream from microphone -->
+            <audio class="lx-local-audio" autoplay></audio>
+            <!-- This is where you connect the remote audio to speaker -->
+            <audio class="lx-remote-audio" autoplay></audio>
+          </div>
+          <!-- Live Experience Display Content -->
+           <!-- <div id="lx_buttons" class="col_full text-center" data-margin="30" data-nav="true" data-pagi="true" data-items-xxs="1" data-items-xs="2" data-items-md="3" data-items-lg="4">
+            <br/>
+            <div id="lx-integration"></div>
+            <br/> -->
+          <!-- End Live Expience Display Content -->
+           </div>
 
         </div>
 
       </div>
 
-    </section><!-- #content end -->
+      </section><!-- #content end -->
+
 
     <!-- Footer
     ============================================= -->
@@ -196,21 +218,27 @@
 
     </footer><!-- #footer end -->
 
-  </div><!-- #wrapper end -->
-
-<!-- Go To Top
-============================================= -->
-<div id="gotoTop" class="icon-angle-up"></div>
-
-<!-- Floating Video Overlay -->
-<!-- <div class="floatingVideo" id="videoOverlay"><video id="localVideo" class="local-video" autoplay style="display: none"></video></div>-->
-
-
+  <!-- </div> --><!-- #wrapper end -->
 
 <!-- External JavaScripts
 ============================================= -->
 <script type="text/javascript" src="js/jquery.js"></script>
+<!-- <script type="text/javascript" src="js/plugins.js"></script> -->
+
+<!-- Scripts to show and hide buttons and call actions
+============================================= -->
 <script>
+  //Get Date Time
+  var apptdate = new Date().toLocaleDateString();
+  var appttime =  new Date().toLocaleTimeString();
+
+  //Output Data Variable to table
+  document.getElementById('output-apptID').innerHTML = sessionStorage.getItem('appointmentID');
+  document.getElementById('output-name').innerHTML = sessionStorage.getItem('fullname');
+  document.getElementById('output-email').innerHTML = sessionStorage.getItem('email');
+  document.getElementById('output-date').innerHTML = apptdate;
+  document.getElementById('output-time').innerHTML = appttime;
+
   // Initial disable of Start Call Button until terms are agreed //
   $('#legalCheck').click(function(){
 
@@ -240,11 +268,28 @@
     //$('#videoOverlay').addClass('hideContent');
   });
 </script>
-<script type="text/javascript" src="js/plugins.js"></script>
+
+  <!-- Add Live Experience Code
+	============================================= -->
+    <!-- Tells requireJS to load /js/main.js-->
+    <script type="text/javascript" data-main="js/main" src="lx/lib/require.js"></script>
+
+    <!-- if the application does not use require.js then use the data-main from Live Experience -->
+    <!-- <script type="text/javascript" data-main="lx/main" src="lx/lib/require.js"></script> -->
+
+    <!-- Call app.js -->
+    <script>
+      require(["js/app.js"], function(app) {
+        console.log("Medical app loaded");
+        // initialise Live-Experience web component
+        app.lxApp.initApp("#lx-integration");
+          });
+    </script>
+    <!-- End Live Experience Code -->
 
 <!-- Footer Scripts
 ============================================= -->
-<script type="text/javascript" src="js/functions.js"></script>
+<!-- <script type="text/javascript" src="js/functions.js"></script> -->
 
 </body>
 </html>

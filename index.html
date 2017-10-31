@@ -7,7 +7,6 @@
 
 	<!-- Stylesheets
 	============================================= -->
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Montserrat:400,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
 	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
@@ -460,23 +459,30 @@
 
 	<script type="text/javascript">
 
-		$("#template-medical-form").validate({
-			submitHandler: function(form) {
-				var formButton = $(form).find('button'),
-					formButtonText = formButton.html();
 
-				formButton.prop('disabled', true).html('<i class="icon-line-loader icon-spin norightmargin"></i>');
-				$(form).ajaxSubmit({
-					target: '#medical-form-result',
-					success: function() {
-						formButton.prop('disabled', false).html(formButtonText);
-						$(form).find('.form-control').val('');
-						$('#medical-form-result').attr('data-notify-msg', $('#medical-form-result').html()).html('');
-						SEMICOLON.widget.notifications($('#medical-form-result'));
-					}
-				});
+	window.onload = function(){
+		let userLocation = null;
+		if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+				//_callback();
+		} else {
+	    	sessionStorage.setItem("UserLocation", "Not Defined");
+				console.log("No user location defiend")
+		}
+
+		function showPosition(position) {
+			userLocation = position.coords.latitude + "," + position.coords.longitude;
+			if ( userLocation == null ) {
+    		sessionStorage.setItem("UserLocation", "Not Defined");
+				console.log("No user location defiend")
+			} else {
+					sessionStorage.setItem("UserLocation", userLocation);
+					console.log("Saving User Location " + userLocation);
 			}
-		});
+			return userLocation;
+		}
+
+	};
 
 	</script>
 

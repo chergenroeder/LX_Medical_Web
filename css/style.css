@@ -1,11 +1,5 @@
-.local-video {
-  height: 105px;
-  width: 140px;
-}
-
-.remote-video {
-  height: 450px;
-  width: 600px;
+#lx-integration {
+  position: relative;
 }
 
 .floatingVideo {
